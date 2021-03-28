@@ -1,0 +1,297 @@
+
+.dragonball{
+    font-size: 30px;
+    text-decoration: dashed;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 4px;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.dragonball:hover{
+    background: #f39609;
+    box-shadow: 0 0 10px #f39609, 0 0 40px #f39609,0 0 80px #f39609;
+    transition-delay: 1s;
+}
+.dragonball span{
+    position:absolute;
+    display: block;
+}
+#span1{
+    top: 0;
+    left:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#f39609);
+}
+.dragonball:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+
+#span3{
+    bottom: 0;
+    right:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#f39609);
+}
+.dragonball:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#f39609);
+}
+.dragonball:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#f39609);
+}
+.dragonball:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+button{
+    animation: alternate;
+}
+
+
+ .dragonballz{
+    font-size: 30px;
+    text-decoration: dashed;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 4px;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.dragonballz:hover{
+    background: #dde007;
+    box-shadow: 0 0 10px #dde007, 0 0 40px #dde007,0 0 80px #dde007;
+    transition-delay: 1s;
+}
+.dragonballz span{
+    position:absolute;
+    display: block;
+}
+#span12{
+    top: 0;
+    left:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#dde007);
+}
+.dragonballz:hover #span12{
+    left: 100%;
+    transition: 1s;
+}
+
+#span32{
+    bottom: 0;
+    right:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#dde007);
+}
+.dragonballz:hover #span32{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span22{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#dde007);
+}
+.dragonballz:hover #span22{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span42{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#dde007);
+}
+.dragonballz:hover #span42{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+.dragonballgt{
+    font-size: 30px;
+    text-decoration: dashed;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 4px;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.dragonballgt:hover{
+    background: #f30505;
+    box-shadow: 0 0 10px #f30505, 0 0 40px #f30505,0 0 80px #f30505;
+    transition-delay: 1s;
+}
+.dragonballgt span{
+    position:absolute;
+    display: block;
+}
+#span13{
+    top: 0;
+    left:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#f30505);
+}
+.dragonballgt:hover #span13{
+    left: 100%;
+    transition: 1s;
+}
+
+#span33{
+    bottom: 0;
+    right:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#f30505);
+}
+.dragonballgt:hover #span33{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span23{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#f30505);
+}
+.dragonballgt:hover #span23{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span43{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#f30505);
+}
+.dragonballgt:hover #span43{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+.dragonballs{
+    font-size: 30px;
+    text-decoration: dashed;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 4px;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.dragonballs:hover{
+    background: #05c3f3;
+    box-shadow: 0 0 10px #05c3f3, 0 0 40px #05c3f3,0 0 80px #05c3f3;
+    transition-delay: 1s;
+}
+.dragonballs span{
+    position:absolute;
+    display: block;
+}
+#span14{
+    top: 0;
+    left:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#05c3f3);
+}
+.dragonballs:hover #span14{
+    left: 100%;
+    transition: 1s;
+}
+
+#span34{
+    bottom: 0;
+    right:-100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#05c3f3);
+}
+.dragonballs:hover #span34{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span24{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#05c3f3);
+}
+.dragonballs:hover #span24{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span44{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#05c3f3);
+}
+.dragonballs:hover #span44{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
