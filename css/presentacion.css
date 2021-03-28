@@ -474,8 +474,59 @@
   }
 
   footer {
-    margin: 3rem;
+    margin: 2rem;
     transition: all 0.2s ease-in-out;
 	  background: transparent;
     font-family: 'Roboto Slab', serif;
+    padding: 0;
   }
+  .main-footer .container p{
+    margin: 1rem;
+  }
+  .main-footer .column--50-25 p{
+    margin: 1rem;
+  }
+  .main-footer{
+    background: #252424;
+    color: #828282;
+    align-items: center;
+  }
+  .main-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer__title{
+    font-size: 1.8em;
+    color: white;
+    text-transform: uppercase;
+  }
+  .column--50-25 {
+    width: 30%;
+    padding: 5px;
+  }
+  .footer__author{
+    text-align: right;
+    color: #EEAD33;
+    display: block;
+  }
+  .footer__txt{
+    font-size: 20px;
+    align-items: center;
+    color: #828282;
+  }
+  .footer__txt .fa-twitter{
+    color: #3bbef5;
+    margin-right: 5px;
+  }
+  .footer__link{
+    color: #EEAD33;
+  }
+  .footer__date{
+    font-size: .8em;
+    border-bottom: 1px solid #888;
+    padding-bottom: 10px;
+    color: white;
+  }
+  
+  
