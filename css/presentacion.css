@@ -52,7 +52,7 @@
     }
     .cuerpo {
       background-image: url('https://cdn.wallpapersafari.com/14/31/k4oImz.jpg');
-      height: 300rem;/*Aquí se le mueven los «rem» para que se haga más grande la cosa.*/
+      height: 335rem;/*Aquí se le mueven los «rem» para que se haga más grande la cosa.*/
     }
     .pies {
       background-image: url('https://nsgeu.ca/wp-content/uploads/2019/10/telehealth.jpg');
@@ -698,4 +698,11 @@ form.form_contact input[type="button"]:hover{
     cursor: pointer;
 
     float: right;
+}
+
+/*Para centrar una imagen.*/
+.centrar_imagen {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
