@@ -4,7 +4,7 @@ function soloLetras(e){
     letras = "áéíóúabcdefghijklmnñopqrstuvwxyz"+"0123456789"+"ÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ"+"_.@";
     especiales = "8-37-39-46";
 
-    tecla_especial = false
+    tecla_especial = false;
     for(var i in especiales){
          if(key == especiales[i]){
              tecla_especial = true;
@@ -31,7 +31,7 @@ function soloLetras(e){
     letras = "abcdefghijklmnopqrstuvwxyz"+"0123456789"+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"+"_.@-";
     especiales = "8-37-39-46";
 
-    tecla_especial = false
+    tecla_especial = false;
     for(var i in especiales){
          if(key == especiales[i]){
              tecla_especial = true;
@@ -46,7 +46,7 @@ function soloLetras(e){
 
     function valida_envia(){
      
-        //el formulario se envia
-        alert("Sesión exitosa");
+        //El formulario se envía.
+        alert("Sesión exitosa.");
         document.fvalida.submit();
  }
