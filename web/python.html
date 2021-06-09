@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <title>Salud.Maps | Python</title>
+</head>
+<body>
+    <header>
+       <ul>
+           <li><img src="img/logo_lateral_negro.png" alt="El logo del servicio."></li>
+           <li><a href="index.jsp"><b>Buscar</b></a></li>
+           <li><a href="sesion.html"><b>Identificarse</b></a></li>
+           <li><a href="quienes.html"><b>Conócenos</b></a></li>
+           <li><a href="#" class="active"><b>Python</b></a></li>
+           <li><a href="favoritos.jsp"><b>Favoritos</b></a></li>
+       </ul> 
+    </header>
+    <div>
+        <h1 style="padding-left: 60px; font-size: 5rem; text-align: center;">Regresión lineal</h1>
+        <h2 style="text-align: center;">Utilizando un modelo de regresión lineal
+            realizamos una gráfica para visualizar<br>la relación entre lugares
+            y los servicios ofrecidos.</h2>
+    </div>
+<center>
+    <img src="img/fig_1.png">
+    </center>
+    <!-- HTML generated using hilite.me --><div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">numpy</span> <span style="color: #007020; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">np</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">matplotlib.pyplot</span> <span style="color: #007020; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">plt</span>
+<span style="color: #007020; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sklearn.linear_model</span> <span style="color: #007020; font-weight: bold">import</span> LinearRegression
+x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #40a070">1</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">4</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">11</span>, <span style="color: #40a070">12</span>, <span style="color: #40a070">13</span>, <span style="color: #40a070">14</span>, <span style="color: #40a070">15</span>, <span style="color: #40a070">16</span>, <span style="color: #40a070">17</span>, <span style="color: #40a070">18</span>, <span style="color: #40a070">19</span>, <span style="color: #40a070">20</span>, <span style="color: #40a070">21</span>, <span style="color: #40a070">22</span>, <span style="color: #40a070">23</span>, <span style="color: #40a070">24</span>, <span style="color: #40a070">25</span>, <span style="color: #40a070">26</span>, <span style="color: #40a070">27</span>, <span style="color: #40a070">28</span>, <span style="color: #40a070">29</span>,
+              <span style="color: #40a070">30</span>, <span style="color: #40a070">31</span>, <span style="color: #40a070">32</span>, <span style="color: #40a070">33</span>, <span style="color: #40a070">34</span>, <span style="color: #40a070">35</span>, <span style="color: #40a070">36</span>, <span style="color: #40a070">37</span>, <span style="color: #40a070">38</span>, <span style="color: #40a070">39</span>, <span style="color: #40a070">40</span>, <span style="color: #40a070">41</span>, <span style="color: #40a070">42</span>, <span style="color: #40a070">43</span>, <span style="color: #40a070">44</span>, <span style="color: #40a070">45</span>, <span style="color: #40a070">46</span>, <span style="color: #40a070">47</span>, <span style="color: #40a070">48</span>, <span style="color: #40a070">49</span>, <span style="color: #40a070">50</span>, <span style="color: #40a070">51</span>, <span style="color: #40a070">52</span>, <span style="color: #40a070">53</span>, <span style="color: #40a070">54</span>, <span style="color: #40a070">55</span>,
+              <span style="color: #40a070">56</span>, <span style="color: #40a070">57</span>, <span style="color: #40a070">58</span>, <span style="color: #40a070">59</span>, <span style="color: #40a070">60</span>, <span style="color: #40a070">61</span>, <span style="color: #40a070">62</span>, <span style="color: #40a070">63</span>, <span style="color: #40a070">64</span>, <span style="color: #40a070">65</span>, <span style="color: #40a070">66</span>, <span style="color: #40a070">67</span>, <span style="color: #40a070">68</span>, <span style="color: #40a070">69</span>, <span style="color: #40a070">70</span>, <span style="color: #40a070">71</span>, <span style="color: #40a070">72</span>, <span style="color: #40a070">73</span>, <span style="color: #40a070">74</span>, <span style="color: #40a070">75</span>, <span style="color: #40a070">76</span>, <span style="color: #40a070">77</span>, <span style="color: #40a070">78</span>, <span style="color: #40a070">79</span>, <span style="color: #40a070">80</span>, <span style="color: #40a070">81</span>,
+              <span style="color: #40a070">82</span>, <span style="color: #40a070">83</span>, <span style="color: #40a070">84</span>, <span style="color: #40a070">85</span>, <span style="color: #40a070">86</span>, <span style="color: #40a070">87</span>, <span style="color: #40a070">88</span>, <span style="color: #40a070">89</span>, <span style="color: #40a070">90</span>, <span style="color: #40a070">91</span>, <span style="color: #40a070">92</span>, <span style="color: #40a070">93</span>, <span style="color: #40a070">94</span>, <span style="color: #40a070">95</span>, <span style="color: #40a070">96</span>, <span style="color: #40a070">97</span>, <span style="color: #40a070">98</span>, <span style="color: #40a070">99</span>, <span style="color: #40a070">100</span>, <span style="color: #40a070">101</span>, <span style="color: #40a070">102</span>, <span style="color: #40a070">103</span>, <span style="color: #40a070">104</span>, <span style="color: #40a070">105</span>, <span style="color: #40a070">106</span>,
+              <span style="color: #40a070">107</span>, <span style="color: #40a070">108</span>, <span style="color: #40a070">109</span>, <span style="color: #40a070">110</span>, <span style="color: #40a070">111</span>])
+y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #40a070">4</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">4</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">4</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">2</span>,
+              <span style="color: #40a070">1</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">4</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">0</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">4</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">1</span>,
+              <span style="color: #40a070">9</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">9</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">0</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">10</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">5</span>, <span style="color: #40a070">7</span>, <span style="color: #40a070">8</span>, <span style="color: #40a070">5</span>,
+              <span style="color: #40a070">5</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">6</span>, <span style="color: #40a070">4</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">2</span>, <span style="color: #40a070">3</span>, <span style="color: #40a070">3</span>])
+linreg <span style="color: #666666">=</span> LinearRegression()
+x <span style="color: #666666">=</span> x<span style="color: #666666">.</span>reshape(<span style="color: #666666">-</span><span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>)
+linreg<span style="color: #666666">.</span>fit(x, y)
+LinearRegression(copy_X<span style="color: #666666">=</span><span style="color: #007020">True</span>, fit_intercept<span style="color: #666666">=</span><span style="color: #007020">True</span>, n_jobs<span style="color: #666666">=</span><span style="color: #40a070">1</span>, normalize<span style="color: #666666">=</span><span style="color: #007020">False</span>)
+y_pred <span style="color: #666666">=</span> linreg<span style="color: #666666">.</span>predict(x)
+plt<span style="color: #666666">.</span>scatter(x, y)
+plt<span style="color: #666666">.</span>plot(x, y_pred, color<span style="color: #666666">=</span><span style="color: #4070a0">&#39;red&#39;</span>)
+plt<span style="color: #666666">.</span>title(<span style="color: #4070a0">&#39;Servicios por lugar&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #4070a0">&#39;Lugares&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #4070a0">&#39;Servicios&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></td></tr></table></div>
+
+    <footer>
+            <div class="container-footer-all">
+                <div class="container-body">
+                    <div class="colum1">
+                        <h1>Información de la compañía</h1>
+                        <a href="./quienes.html">Quiénes somos</a>
+                    </div>
+                    <div class="colum2">
+                        <h1>Matriz</h1>
+                        <div class="row2">
+                            <img src="img/house.png">
+                            <label>Centro de Estudios Científicos y Tecnológicos
+                                9 Juan de Dios Bátiz
+                            </label>
+                        </div>
+                    </div>
+                    <div class="colum3">
+                        <h1>Datos de contacto</h1>
+                        <div class="row2">
+                            <img src="img/smartphone.png">
+                            <label>+52 1 55 7895 2487</label>
+                        </div>
+                        <div class="row2">
+                            <img src="img/contact.png">
+                            <label>equipodosmasuno@gmail.com</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-footer">
+                <div class="footer">
+                    <div class="copyright">
+                        © 2021 Todos los Derechos Reservados | <b>Data Jockey</b>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
