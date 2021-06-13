@@ -4,6 +4,7 @@
     Author     : aza06
 --%>
 
+<%@page import="java.io.PrintWriter"%>
 <%@page import="Modelo.FavLugar"%>
 <%@page import="java.util.Vector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true" %>
@@ -41,9 +42,13 @@
        <ul>
            <li><img src="img/logo_lateral_negro.png" alt="El logo del servicio."></li>
            <li><a href="index.jsp"><b>Buscar</b></a></li>
-           <li><a href="#"><b>Identificarse</b></a></li>
-           <li><a href="quienes.html"><b>Conócenos</b></a></li>
            <li><a href="#" class="active"><b>Favoritos</b></a></li>
+           <li><a href="sesiondelusuario.jsp" class="active"><b>Tu cuenta</b></a></li>
+          <li><a href="cerrarSesion"><b>Cerrar sesion</b></a></li>
+            <li class="Nombre"><%  PrintWriter pw= response.getWriter();
+        pw.println("<br><li class='Nombre' color:'red' align='center'>"+sesionuok.getAttribute("usuario")+"</li><br>");%><li>
+
+
        </ul> 
     </header>  
         
@@ -102,42 +107,87 @@
             /*}
                 */
             %>
-        <footer>
-            <div class="container-footer-all">
-                <div class="container-body">
-                    <div class="colum1">
-                        <h1>Información de la compañía</h1>
-                        <a href="./quienes.html">Quiénes somos</a>
-                    </div>
-                    <div class="colum2">
-                        <h1>Matriz</h1>
-                        <div class="row2">
-                            <img src="img/house.png">
-                            <label>Centro de Estudios Científicos y Tecnológicos
-                                9 Juan de Dios Bátiz
-                            </label>
-                        </div>
-                    </div>
-                    <div class="colum3">
-                        <h1>Datos de contacto</h1>
-                        <div class="row2">
-                            <img src="img/smartphone.png">
-                            <label>+52 1 55 7895 2487</label>
-                        </div>
-                        <div class="row2">
-                            <img src="img/contact.png">
-                            <label>equipodosmasuno@gmail.com</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-footer">
-                <div class="footer">
-                    <div class="copyright">
-                        © 2021 Todos los Derechos Reservados | <b>Data Jockey</b>
-                    </div>
-                </div>
-            </div>
-        </footer>
+<footer>
+       
+      <div class="container-footer-all">
+       
+           <div class="container-body">
+
+               <div class="colum1">
+                   <h1>Mas informacion de la compañia</h1>
+
+                   <p>Para poder tener nustra informacion ir al siguiente link:.</p>
+                        <a href="./quienes.html">Quienes somos?</a>
+               </div>
+
+               <div class="colum2">
+
+                   <h1>Redes Sociales</h1>
+
+                   <div class="row2">
+                       <img src="img/facebook.png">
+                       <label>Siguenos en Facebook</label>
+                   </div>
+                   <div class="row2">
+                       <img src="img/twitter.png">
+                       <label>Siguenos en Twitter</label>
+                   </div>
+                   <div class="row2">
+                       <img src="img/instagram.png">
+                       <label>Siguenos en Instagram</label>
+                   </div>
+                   <div class="row2">
+                       <img src="img/google-plus.png">
+                       <label>Siguenos en Google Plus</label>
+                   </div>
+                   <div class="row2">
+                       <img src="img/pinterest.png">
+                       <label>Siguenos en Pinterest</label>
+                   </div>
+
+
+               </div>
+
+               <div class="colum3">
+
+                   <h1>Informacion Contactos</h1>
+
+                   <div class="row2">
+                       <img src="img/house.png">
+                       <label>Centro de Estudios Cientificos y Tecnologicos
+                             N 9° "Juan De Dios Batiz"
+                       </label>
+                   </div>
+
+                   <div class="row2">
+                       <img src="img/smartphone.png">
+                       <label>+52 1 55 7895 2487</label>
+                   </div>
+
+                   <div class="row2">
+                       <img src="img/contact.png">
+                        <label>equipodosmasuno@gmail.com</label>
+                   </div>
+
+               </div>
+
+           </div>
+       
+       </div>
+       
+       <div class="container-footer">
+              <div class="footer">
+                   <div class="copyright">
+                       © 2021 Todos los Derechos Reservados | <a href="">DataJockey</a>
+                   </div>
+
+                   <div class="information">
+                       <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                   </div>
+               </div>
+
+           </div>
+       
+   </footer>
     </body>
 </html>

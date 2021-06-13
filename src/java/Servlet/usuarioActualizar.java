@@ -5,16 +5,18 @@
  */
 package Servlet;
 
+
 import Control.AccionesUsuario;
+import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Servlet.cerrarSesion;
 
-
-public class borrarUsuario extends HttpServlet{
+public class usuarioActualizar extends HttpServlet{
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,16 +30,30 @@ public class borrarUsuario extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+          try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            int id_usu = Integer.parseInt(request.getParameter("id_usu"));
+            int id_usu = Integer.parseInt(request.getParameter("id_usu2"));
+            System.out.println(id_usu);
+            String nom_usu, con_usu, ema_usu;
             
-            int estatus = AccionesUsuario.borrarUsuario(id_usu);
+            nom_usu = request.getParameter("nom_usu2");
+            con_usu = request.getParameter("con_usu2");
+            ema_usu = request.getParameter("ema_usu2");
+            
+            
+            Usuario e = new Usuario();
+            
+            e.setId_usu(id_usu);
+            e.setNom_usu(nom_usu);
+            e.setCon_usu(con_usu);
+            e.setEma_usu(ema_usu);
+            
+            int estatus = AccionesUsuario.actualizarUsuario(e);
             
             if(estatus > 0){
-                response.sendRedirect("controlAdmin.html");
-                /*cuestiones de diseño*/
+                response.sendRedirect("cerrarSesion");
+                /* cosas de diseño */
             }else{
                 response.sendRedirect("error.jsp");
             }
@@ -82,5 +98,5 @@ public class borrarUsuario extends HttpServlet{
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

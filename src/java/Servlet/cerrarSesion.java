@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-public class equis extends HttpServlet{
+public class cerrarSesion extends HttpServlet{
     
  
     //Ya sea que el método sea por GET o POST, cerraremos la sesion.

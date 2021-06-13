@@ -5,7 +5,8 @@
  */
 package Servlet;
 
-import Control.AccionesUsuario;
+import Control.AccionesLugar;
+import Modelo.Lugar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,9 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author aza06
+ */
+public class modificarLugar extends HttpServlet {
 
-public class borrarUsuario extends HttpServlet{
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -30,14 +34,39 @@ public class borrarUsuario extends HttpServlet{
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            int id_lug = Integer.parseInt(request.getParameter("id_lug2"));
+            String nom_lug, st_lug, tel_lug;
+            int id_ad, id_al, id_col, id_cp, id_tip, cal_lug;
+    
+            tel_lug = request.getParameter("tel_lug2");
+            nom_lug = request.getParameter("nom_lug2");
+            cal_lug = Integer.parseInt(request.getParameter("cal_lug2"));
+            st_lug = request.getParameter("st_lug2");
+            id_ad = Integer.parseInt(request.getParameter("id_ad2"));
+            id_al = Integer.parseInt(request.getParameter("id_al2"));
+            id_col = Integer.parseInt(request.getParameter("id_col2"));
+            id_cp = Integer.parseInt(request.getParameter("id_cp2"));
+            id_tip = Integer.parseInt(request.getParameter("id_tip2"));
             
-            int id_usu = Integer.parseInt(request.getParameter("id_usu"));
+            System.out.println("Hola1");
             
-            int estatus = AccionesUsuario.borrarUsuario(id_usu);
+            Lugar e = new Lugar();
+            e.setId_lug(id_lug);
+            e.setTel_lug(tel_lug);
+            e.setNom_lug(nom_lug);
+            e.setCal_lug(cal_lug);
+            e.setSt_lug(st_lug);
+            e.setId_ad(id_ad);
+            e.setId_al(id_al);
+            e.setId_col(id_col);
+            e.setId_cp(id_cp);
+            e.setId_tip(id_tip);
+            
+            int estatus = AccionesLugar.actualizarLugar(e);
             
             if(estatus > 0){
-                response.sendRedirect("controlAdmin.html");
-                /*cuestiones de diseño*/
+                response.sendRedirect("registroLugar.jsp");
+                /* cosas de diseño */
             }else{
                 response.sendRedirect("error.jsp");
             }
@@ -82,5 +111,5 @@ public class borrarUsuario extends HttpServlet{
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

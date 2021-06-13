@@ -31,10 +31,10 @@ public class actualizarUsuario extends HttpServlet{
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+            System.out.println("Le sabes");
             int id_usu = Integer.parseInt(request.getParameter("id_usu2"));
             String nom_usu, con_usu, ema_usu;
-            
+            System.out.println(id_usu+"1");
             nom_usu = request.getParameter("nom_usu2");
             con_usu = request.getParameter("con_usu2");
             ema_usu = request.getParameter("ema_usu2");
@@ -50,7 +50,7 @@ public class actualizarUsuario extends HttpServlet{
             int estatus = AccionesUsuario.actualizarUsuario(e);
             
             if(estatus > 0){
-                response.sendRedirect("consultarEmpleados.jsp");
+                response.sendRedirect("index.jsp");
                 /* cosas de diseño */
             }else{
                 response.sendRedirect("error.jsp");

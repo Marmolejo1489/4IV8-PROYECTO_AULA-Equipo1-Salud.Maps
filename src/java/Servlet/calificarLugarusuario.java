@@ -5,7 +5,8 @@
  */
 package Servlet;
 
-import Control.AccionesUsuario;
+import Control.AccionesLugar;
+import Modelo.Lugar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,9 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author aza06
+ */
+public class calificarLugarusuario extends HttpServlet {
 
-public class borrarUsuario extends HttpServlet{
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,13 +35,25 @@ public class borrarUsuario extends HttpServlet{
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            int id_usu = Integer.parseInt(request.getParameter("id_usu"));
+            int id_lug = Integer.parseInt(request.getParameter("id_lug3"));
+            int cal_lug;
+    
             
-            int estatus = AccionesUsuario.borrarUsuario(id_usu);
+            cal_lug = Integer.parseInt(request.getParameter("cal_lug3"));
+            
+            
+            System.out.println("Hola1");
+            
+            Lugar e = new Lugar();
+            e.setId_lug(id_lug);
+            e.setCal_lug(cal_lug);
+           
+            
+            int estatus = AccionesLugar.calificarLugar(e);
             
             if(estatus > 0){
-                response.sendRedirect("controlAdmin.html");
-                /*cuestiones de diseño*/
+                response.sendRedirect("index.jsp");
+                /* cosas de diseño */
             }else{
                 response.sendRedirect("error.jsp");
             }
@@ -82,5 +98,5 @@ public class borrarUsuario extends HttpServlet{
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

@@ -70,6 +70,8 @@ public class AccionesUsuario {
         return estatus;
         
     }
+        
+    
     
     public static int borrarUsuario(int id_usu){
         int estatus = 0;
@@ -112,6 +114,35 @@ public class AccionesUsuario {
                 
             }
             System.out.println("Usuario encontrado.");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al buscar este usuario.");
+            System.out.println(ed.getMessage());
+        
+        }
+        return e;
+        
+    }
+    public static Usuario buscarUsuarioByNom(String nom_usu){
+        Usuario e = new Usuario();
+        try{
+            Connection con = Conexion.getConnection();
+            String q = "select * from MUsuario where nom_usu = ?";
+            /*Miguel o quien haga la base xd, aqui es donde se hace la consulta con nuestra base*/
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, nom_usu);
+            
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                e.setId_usu(rs.getInt(1));
+                e.setNom_usu(rs.getString(2));
+                e.setEma_usu(rs.getString(3));
+                e.setCon_usu(rs.getString(4));
+                System.out.println("Diego");
+            }
+            System.out.println("Usuario encontrado.");
+            
             con.close();
         }catch(Exception ed){
             System.out.println("Error al buscar este usuario.");
